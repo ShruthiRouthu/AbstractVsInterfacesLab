@@ -19,6 +19,9 @@ public interface Course {
     public abstract double getCredits();
     public abstract void setCredits(double credits);
     
+    public abstract String getPrerequisites();
+    public abstract void setPrerequisites(String courseNumber);
+    
     public abstract String toString();
     
 }

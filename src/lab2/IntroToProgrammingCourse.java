@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 /**
  * This class implements Course interface and 
- * doesn't have "prerequisites" property.
+ * sets prerequisites as none by default in the constructor.
  * 
  *
  * @author      Shruthi Routhu
@@ -14,11 +14,14 @@ public class IntroToProgrammingCourse implements Course {
     private String courseName;
     private String courseNumber;
     private double credits;
+    private String prerequisites;
 
     // Constructor
-    public IntroToProgrammingCourse(String courseName, String courseNumber) {
+    public IntroToProgrammingCourse(String courseName, String courseNumber, double credits) {
         this.setCourseName(courseName);
         this.setCourseNumber(courseNumber);
+        this.setCredits(credits);
+        this.setPrerequisites("none");
     }
     
     // Getter and setter methods for "courseName" 
@@ -55,12 +58,23 @@ public class IntroToProgrammingCourse implements Course {
     }
 
     public final void setCredits(double credits) {
-        if(credits < 0.5 || credits > 4.0) {
+        if(credits < 0.0 || credits > 4.0) {
             JOptionPane.showMessageDialog(null,
                     "Error: credits must be in the range 0.5 to 4.0");
             System.exit(0);
         }
         this.credits = credits;
+    }
+    
+    // Getter and setter methods for "prerequisites" 
+    public String getPrerequisites() {
+        return prerequisites;
+    }
+
+    // I am not validating prerequisites to ensure the flexibility 
+    // to set as none, null or  an empty space.
+    public final void setPrerequisites(String prerequisites) {
+        this.prerequisites = prerequisites;
     }
 
     public String toString()

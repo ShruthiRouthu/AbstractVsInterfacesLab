@@ -18,15 +18,23 @@ public static void main(String[] args){
  // to the classs  with regards  to implementation. 
 
  // Instantiating  the classes
-    Course myAdvancedJavaCourse = new AdvancedJavaCourse("Advanced Java", "152-135");
-    Course myIntroJavaCourse = new IntroJavaCourse("Introduction to Java", "152-125");
-    Course myIntroToProgrammingCourse = new IntroToProgrammingCourse("Introduction to Programming", "152-110");
+    Course myAdvancedJavaCourse = new AdvancedJavaCourse("Advanced Java", "152-135",4.0,"Introduction to Java" );
+    Course myIntroJavaCourse = new IntroJavaCourse("Introduction to Java", "152-125",4.0,"Introduction to Programming");
+    Course myIntroToProgrammingCourse = new IntroToProgrammingCourse("Introduction to Programming", "152-110", 4.0);
     
-    System.out.println(myAdvancedJavaCourse.toString());
-    System.out.println("");
-    System.out.println(myIntroJavaCourse.toString());
-    System.out.println("");
-    System.out.println(myIntroToProgrammingCourse.toString());
+//    System.out.println(myAdvancedJavaCourse.toString());
+//    System.out.println("");
+//    System.out.println(myIntroJavaCourse.toString());
+//    System.out.println("");
+//    System.out.println(myIntroToProgrammingCourse.toString());
+    
+    Course[] myCourses = {myAdvancedJavaCourse,myIntroJavaCourse,myIntroToProgrammingCourse};
+    
+    for(Course c: myCourses)
+    {
+        System.out.println(c.toString() + "\n");
+    }
+    
 
 }
 
